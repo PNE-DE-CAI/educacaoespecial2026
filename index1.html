@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Formação Inclusiva | Resolução SEDUC 129/2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(145deg, #0a2f6c 0%, #041a3a 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #212121;
+        }
+        :root {
+            --azul-escuro: #0a2f6c;
+            --azul-claro: #eef3fb;
+            --vermelho: #d32f2f;
+            --branco: #ffffff;
+            --preto: #212121;
+            --cinza-borda: #e0e4e9;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #0f1a24;
+            border-radius: 48px;
+            padding: 20px;
+            box-shadow: 0 30px 35px rgba(0,0,0,0.5), inset 0 1px 4px rgba(255,255,200,0.1);
+            border: 1px solid var(--vermelho);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #0a2f6ccc;
+            backdrop-filter: blur(4px);
+            padding: 12px 24px;
+            border-radius: 60px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-area img {
+            max-height: 50px;
+            width: auto;
+            background: white;
+            border-radius: 12px;
+            padding: 4px;
+        }
+        .logo-area span {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #ffec9e;
+        }
+        .title-badge {
+            background: var(--vermelho);
+            color: white;
+            padding: 6px 18px;
+            border-radius: 3rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--branco);
+            border-left: 6px solid var(--vermelho);
+            padding-left: 1rem;
+            margin: 1rem 0 1.2rem 0;
+        }
+        .card {
+            background: var(--branco);
+            border-radius: 32px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            border: 1px solid var(--cinza-borda);
+        }
+        .info-box {
+            background: var(--azul-claro);
+            border-left: 5px solid var(--vermelho);
+            padding: 1rem;
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
+        }
+        .info-box p {
+            color: var(--preto);
+            line-height: 1.4;
+        }
+        .tabs-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            background: transparent;
+        }
+        .tab-btn {
+            background: rgba(255,255,240,0.1);
+            backdrop-filter: blur(4px);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: 0.2s;
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .tab-btn i {
+            font-size: 1rem;
+        }
+        .tab-btn.active {
+            background: var(--vermelho);
+            color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .tab-btn:hover:not(.active) {
+            background: rgba(255,255,255,0.25);
+        }
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.25s ease;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        .subsection-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 1.5rem 0 1rem 0;
+            color: var(--azul-escuro);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 2px solid #eef2ff;
+            padding-bottom: 5px;
+        }
+        .activities-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .activity-card {
+            background: #fefefe;
+            border-radius: 24px;
+            border: 1px solid #e9edf2;
+            padding: 1.2rem 1.5rem;
+            transition: all 0.2s;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+        }
+        .activity-card:hover {
+            border-color: #cbdff2;
+            background: #fdfdfe;
+        }
+        .activity-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--azul-escuro);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+        .activity-meta {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
+            font-size: 0.75rem;
+        }
+        .activity-meta span {
+            background: #eef2ff;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            font-weight: 500;
+        }
+        .produto {
+            background: #fef9e6;
+            padding: 0.6rem 1rem;
+            border-radius: 20px;
+            margin-top: 0.8rem;
+            border-left: 4px solid #ffb347;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .video-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        .video-item {
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 0.8rem 1rem;
+            border: 1px solid #e2e8f0;
+        }
+        .video-item a {
+            font-weight: 600;
+            color: var(--azul-escuro);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .btn-ext {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #f1f5f9;
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #1e293b;
+            text-decoration: none;
+            margin-right: 12px;
+            margin-top: 6px;
+        }
+        .link-footer {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+        .link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.1);
+            padding: 8px 16px;
+            border-radius: 40px;
+            color: white;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        .link-btn:hover {
+            background: var(--vermelho);
+            transform: translateY(-2px);
+        }
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1rem;
+            color: #b4c8e0;
+            font-size: 0.8rem;
+            border-top: 1px solid #2c4c6e;
+        }
+        @media (max-width: 700px) {
+            .container { padding: 12px; }
+            h2 { font-size: 1.4rem; }
+            .tab-btn { padding: 0.5rem 1rem; font-size: 0.8rem; }
+            .subsection-title { font-size: 1.2rem; }
+        }
+        @media print {
+            body { background: white; padding: 0; }
+            .container { background: white; border: none; padding: 0.2cm; box-shadow: none; }
+            .header, .tabs-nav, button, .link-footer, footer, .title-badge, .info-box:first-child { display: none; }
+            .tab-content { display: block !important; }
+            .card { box-shadow: none; border: 1px solid #ccc; page-break-inside: avoid; }
+            .activity-card { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="logo-area">
+            <img src="https://i.ibb.co/0p01LzxB/logo3de.jpg" alt="Logo SEDUC">
+            <span>Formação Inclusiva | Resolução SEDUC 129/2025</span>
+        </div>
+        <div class="title-badge"><i class="fas fa-chalkboard-user"></i> 25 atividades práticas</div>
+    </div>
+
+    <div class="tabs-nav">
+        <button class="tab-btn active" data-tab="parte1"><i class="fas fa-book-open"></i> Parte 1 · Implementação</button>
+        <button class="tab-btn" data-tab="parte2"><i class="fas fa-hands-helping"></i> Parte 2 · AEE SRM/Itinerante</button>
+        <button class="tab-btn" data-tab="parte3"><i class="fas fa-people-arrows"></i> Parte 3 · AEE Expandido</button>
+        <button class="tab-btn" data-tab="parte4"><i class="fas fa-users"></i> Parte 4 · Papéis e Responsab.</button>
+        <button class="tab-btn" data-tab="parte5"><i class="fas fa-microchip"></i> Parte 5 · Comissões e TA</button>
+        <button class="tab-btn" data-tab="videos"><i class="fas fa-video"></i> Vídeos e documentos</button>
+    </div>
+
+    <!-- PARTE 1 -->
+    <div id="parte1" class="tab-content active">
+        <h2>📌 Implementação da Política de Educação Especial – Resolução 129/2025</h2>
+        <div class="card">
+            <div class="info-box">
+                <p><strong>🎯 Contexto:</strong> Em 2025, a rede estadual paulista conta com <strong>95 mil estudantes elegíveis</strong> e <strong>15.778 professores especializados</strong>. A Resolução consolida o modelo social de inclusão, eliminando barreiras e instituindo o Estudo de Caso, PAEE, PEI e AEE Expandido.</p>
+            </div>
+            <div class="subsection-title"><i class="fas fa-chalkboard-user"></i> 📘 Atividades de treinamento – Parte 1</div>
+            <div class="activities-grid">
+                <div class="activity-card"><div class="activity-title"><i class="fas fa-timeline"></i> 1.1 Linha do tempo da política</div><div class="activity-meta"><span>Objetivo: Evolução histórica</span></div><div class="descricao">Com base no documento, elabore uma linha do tempo (2020 a 2025) destacando consulta pública, Decreto 67.635/2023 e Resolução 129/2025, com análise de avanços.</div><div class="produto">📄 Infográfico ou documento digital com análise crítica.</div></div>
+                <div class="activity-card"><div class="activity-title"><i class="fas fa-balance-scale"></i> 1.2 Modelo médico vs. modelo social</div><div class="descricao">Analise dois casos: paralisia cerebral e autismo não verbal. Compare como cada paradigma orienta o atendimento escolar.</div><div class="produto">📄 Quadro comparativo (mínimo 300 palavras).</div></div>
+                <div class="activity-card"><div class="activity-title"><i class="fas fa-building"></i> 1.3 Mapeamento de barreiras na escola</div><div class="descricao">Identifique 2 exemplos de cada barreira (arquitetônica, atitudinal, comunicacional, pedagógica, tecnológica, transporte) e proponha soluções.</div><div class="produto">📄 Relatório de vistoria com plano de ação.</div></div>
+                <div class="activity-card"><div class="activity-title"><i class="fas fa-user-clock"></i> 1.4 Simulação de acolhimento – estudante em investigação</div><div class="descricao">Família procura escola com hipótese de TEA sem laudo. Descreva passo a passo (documentos, prazos) conforme art.18 da Resolução.</div><div class="produto">📄 Fluxograma ou roteiro de acolhimento.</div></div>
+                <div class="activity-card"><div class="activity-title"><i class="fas fa-question-circle"></i> 1.5 Quiz legislativo</div><div class="descricao">Elabore 10 perguntas de múltipla escolha (gabarito comentado) sobre CF/88 (art.208), LDB, Lei Berenice Piana, LBI e Decreto 67.635.</div><div class="produto">📄 Arquivo com perguntas, respostas e justificativas.</div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PARTE 2 -->
+    <div id="parte2" class="tab-content">
+        <h2>🧩 Atendimento Educacional Especializado – AEE (Sala de Recursos / Itinerante)</h2>
+        <div class="card">
+            <div class="info-box">
+                <p><strong>Organização:</strong> Turmas com até 3 estudantes, carga horária flexível dentro do limite de 6 aulas semanais. Documentos obrigatórios: Estudo de Caso (30 dias), PAEE bimestral, registros na SED.</p>
+            </div>
+            <div class="subsection-title"><i class="fas fa-clipboard-list"></i> 📝 Atividades – Parte 2</div>
+            <div class="activities-grid">
+                <div class="activity-card"><div class="activity-title"><i class="fas fa-file-alt"></i> 2.1 Elaboração de Estudo de Caso (Anexo II)</div><div class="descricao">Perfil fictício: aluna com baixa visão, 12 anos. Preencha todos os campos identificando barreiras, potencialidades e encaminhamentos.</div><div class="produto">📄 Estudo de Caso completo (2-3 páginas).</div></div>
+                <div class="activity-card"><div class="activity-title"><i class="fas fa-calendar-week"></i> 2.2 Planejamento do horário do AEE (turma com até 3 estudantes)</div><div class="descricao">Defina grade semanal para estudantes com cargas 6h,3h,4h semanais, respeitando limite diário e registrando dispensa na SED.</div><div class="produto">📄 Tabela de horários + justificativa.</div></div>
+                <div class="activity-card"><div class="activity-title"><i class="fas fa-file-signature"></i> 2.3 Preenchimento do PAEE (Anexo III)</div><div class="descricao">Com base no mesmo aluno, redija PAEE bimestral: atividades, recursos TA, serviços, orientações a regentes e família.</div><div class="produto">📄 PAEE preenchido (modelo anexo III).</div></div>
+                <div class="activity-card"><div class="activity-title"><i class="fas fa-stethoscope"></i> 2.4 Elegibilidade: laudo vs. hipótese diagnóstica</div><div class="descricao">Analise perfis (TDAH/dislexia, TOD, síndrome de Down, hipótese TEA) e indique elegibilidade ao AEE, fundamentando.</div><div class="produto">📄 Parecer técnico fundamentado.</div></div>
+                <div class="activity-card"><div class="activity-title"><i class="fas fa-database"></i> 2.5 Registro na Secretaria Escolar Digital (SED)</div><div class="descricao">Elabore um checklist para diretor e professor especializado: documentos, prazos, LGPD e rastreabilidade.</div><div class="produto">📄 Checklist em planilha ou lista numerada.</div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PARTE 3 -->
+    <div id="parte3" class="tab-content">
+        <h2>🤝 Projeto Ensino Colaborativo – AEE Expandido</h2>
+        <div class="card">
+            <div class="info-box">
+                <p><strong>Ensino colaborativo:</strong> Professor especializado atua na sala comum, 4 aulas/semana para planejamento e apoio direto. Práticas de coensino, DUA e acessibilidade curricular.</p>
+            </div>
+            <div class="subsection-title"><i class="fas fa-handshake"></i> 🚀 Atividades – Parte 3</div>
+            <div class="activities-grid">
+                <div class="activity-card"><div class="activity-title"><i class="fas fa-chalkboard"></i> 3.1 Roteiro de atuação semanal</div><div class="descricao">Detalhe 10 ações do professor especializado em uma semana: observação, planejamento ATPC, coensino, produção de material e registros no PEI.</div><div class="produto">📄 Tabela semanal com dias/horários/atividades.</div></div>
+                <div class="activity-card"><div class="activity-title"><i class="fas fa-flask"></i> 3.2 Colaboração: adaptação de aula de ciências (cadeia alimentar)</div><div class="descricao">Turma com estudante DI e TEA. Proponha 3 adaptações metodológicas, 2 recursos visuais, 1 avaliação diferenciada.</div><div class="produto">📄 Plano de aula colaborativo.</div></div>
+                <div class="activity-card"><div class="activity-title"><i class="fas fa-heart-broken"></i> 3.3 Barreiras atitudinais – estratégias de sensibilização</div><div class="descricao">Crie 3 situações de baixa expectativa docente; para cada, descreva ação formativa que o professor especializado pode realizar.</div><div class="produto">📄 Relatório reflexivo (mínimo 400 palavras).</div></div>
+                <div class="activity-card"><div class="activity-title"><i class="fas fa-chalkboard-user"></i> 3.4 Planejamento de ATPC inclusiva</div><div class="descricao">Organize uma ATPC de 2h sobre acessibilidade curricular e TA. Elabore pauta detalhada (objetivos, teoria, atividade prática, estudo de caso).</div><div class="produto">📄 Pauta com cronograma minuto a minuto.</div></div>
+                <div class="activity-card"><div class="activity-title"><i class="fas fa-file-contract"></i> 3.5 Construção colaborativa do PEI (Anexo IV)</div><div class="descricao">Com base no estudante da atividade 2.1, elabore PEI bimestral com objetivos para sala comum, estratégias de acessibilidade e articulação com AEE.</div><div class="produto">📄 PEI completo (modelo anexo IV).</div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PARTE 4 -->
+    <div id="parte4" class="tab-content">
+        <h2>👥 Papéis e Responsabilidades – Resolução 129/2025</h2>
+        <div class="card">
+            <div class="info-box">
+                <p><strong>Corresponsabilidade:</strong> Dirigente Regional, Supervisores, PEC, diretor, coordenador, professor regente, professor especializado, PAE, professor de Libras. Cada um com atribuições definidas nos capítulos da Resolução.</p>
+            </div>
+            <div class="subsection-title"><i class="fas fa-briefcase"></i> 📋 Atividades – Parte 4</div>
+            <div class="activities-grid">
+                <div class="activity-card"><div class="activity-title"><i class="fas fa-project-diagram"></i> 4.1 Mapa de corresponsabilidade</div><div class="descricao">Crie organograma da escola e URE listando 3 atribuições concretas para cada função: Dirigente, Supervisor, PEC, Diretor, Coordenador, Professor regente, Professor especializado, PAE.</div><div class="produto">📄 Organograma interativo (digital ou impresso).</div></div>
+                <div class="activity-card"><div class="activity-title"><i class="fas fa-balance-scale"></i> 4.2 Análise de conflito de atribuições (PAE x professor especializado)</div><div class="descricao">PAE é solicitado a dar aula de reforço. Escreva nota técnica delimitando funções e solução.</div><div class="produto">📄 Parecer fundamentado (máx 2 laudas).</div></div>
+                <div class="activity-card"><div class="activity-title"><i class="fas fa-hand-sparkles"></i> 4.3 Relatório de Acolhimento à família (Anexo V)</div><div class="descricao">Simule reunião com pais de estudante autista; preencha o relatório com expectativas, orientações e compromissos.</div><div class="produto">📄 Relatório preenchido (dados fictícios).</div></div>
+                <div class="activity-card"><div class="activity-title"><i class="fas fa-sign-language"></i> 4.4 Atendimento ao estudante surdo – ausência de profissional de Libras</div><div class="descricao">Descreva medidas imediatas, solicitação à URE e adaptações pedagógicas enquanto não chega o profissional bilíngue.</div><div class="produto">📄 Plano de ação com prazos.</div></div>
+                <div class="activity-card"><div class="activity-title"><i class="fas fa-edit"></i> 4.5 Autoavaliação do professor regente</div><div class="descricao">Elabore questionário com 15 perguntas sobre planejamento acessível, uso de recursos, colaboração com AEE e família. Responda e elabore plano de desenvolvimento.</div><div class="produto">📄 Questionário + plano de desenvolvimento.</div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PARTE 5 -->
+    <div id="parte5" class="tab-content">
+        <h2>⚙️ Comissão de Recursos Pedagógicos, Acessibilidade e Tecnologia Assistiva</h2>
+        <div class="card">
+            <div class="info-box">
+                <p><strong>Instância estratégica na URE:</strong> composta por 3 membros (Equipe EE, administrativo, supervisor). Responsável pelo diagnóstico de necessidades, aquisição via PDDE Paulista, acompanhamento anual e eliminação de barreiras.</p>
+            </div>
+            <div class="subsection-title"><i class="fas fa-laptop-code"></i> 💡 Atividades – Parte 5</div>
+            <div class="activities-grid">
+                <div class="activity-card"><div class="activity-title"><i class="fas fa-users"></i> 5.1 Simulação de composição da Comissão na URE</div><div class="descricao">Como Dirigente Regional, defina os 3 membros obrigatórios, processo eleitoral bienal e elabore portaria simulada.</div><div class="produto">📄 Portaria simulada + justificativa.</div></div>
+                <div class="activity-card"><div class="activity-title"><i class="fas fa-clinic-medical"></i> 5.2 Diagnóstico de demandas de TA em escola</div><div class="descricao">Escola com 3 estudantes (paralisia cerebral, baixa visão, TEA). Liste recursos disponíveis, necessidades e prioridades de aquisição via PDDE Paulista.</div><div class="produto">📄 Relatório de diagnóstico (incluir orçamento fictício).</div></div>
+                <div class="activity-card"><div class="activity-title"><i class="fas fa-chart-simple"></i> 5.3 Preenchimento do Formulário de Acompanhamento Anual (Anexo I)</div><div class="descricao">Com dados simulados, preencha o anexo I e redija análise crítica dos pontos fortes e fragilidades da Comissão.</div><div class="produto">📄 Formulário preenchido + parecer conclusivo.</div></div>
+                <div class="activity-card"><div class="activity-title"><i class="fas fa-head-side-headphones"></i> 5.4 Avaliação da funcionalidade de TA (software leitor de tela)</div><div class="descricao">Responda aos 3 questionamentos (pág.13): objetivo atingido? acompanhamento do professor especializado? aluno foi ouvido? recomende manter/ajustar.</div><div class="produto">📄 Relatório de reavaliação.</div></div>
+                <div class="activity-card"><div class="activity-title"><i class="fas fa-chalkboard"></i> 5.5 Plano de formação para professores sobre DUA e acessibilidade curricular</div><div class="descricao">Estruture formação de 8h (2 encontros): ementa, objetivos, atividades práticas (ex.: adaptar atividade matemática com múltiplas representações), recursos e avaliação.</div><div class="produto">📄 Projeto de formação (modelo de curso).</div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- VÍDEOS E DOCUMENTOS -->
+    <div id="videos" class="tab-content">
+        <h2><i class="fas fa-play-circle"></i> Formação multimídia e documentos oficiais</h2>
+        <div class="card">
+            <div class="video-grid">
+                <div class="video-item"><a href="https://repositorio.educacao.sp.gov.br/videoPlay?id=152261" target="_blank"><i class="fas fa-video"></i> Vídeo 1 - Abertura + Resolução 129/2025</a></div>
+                <div class="video-item"><a href="https://repositorio.educacao.sp.gov.br/videoPlay?id=152262" target="_blank"><i class="fas fa-chalkboard"></i> Vídeo 2 - AEE Sala de Recursos/Itinerante</a></div>
+                <div class="video-item"><a href="https://repositorio.educacao.sp.gov.br/videoPlay?id=152263" target="_blank"><i class="fas fa-people-arrows"></i> Vídeo 3 - AEE Expandido / Ensino Colaborativo</a></div>
+                <div class="video-item"><a href="https://repositorio.educacao.sp.gov.br/videoPlay?id=152264" target="_blank"><i class="fas fa-file-alt"></i> Vídeo 4 - Estudo de Caso</a></div>
+                <div class="video-item"><a href="https://repositorio.educacao.sp.gov.br/videoPlay?id=152265" target="_blank"><i class="fas fa-clipboard-list"></i> Vídeo 5 - PAEE</a></div>
+                <div class="video-item"><a href="https://repositorio.educacao.sp.gov.br/videoPlay?id=152266" target="_blank"><i class="fas fa-file-signature"></i> Vídeo 6 - PEI</a></div>
+                <div class="video-item"><a href="https://repositorio.educacao.sp.gov.br/videoPlay?id=152267" target="_blank"><i class="fas fa-handshake"></i> Vídeo 7 - Relatório de Acolhimento / Retorno às famílias</a></div>
+            </div>
+            <div class="subsection-title"><i class="fas fa-folder-open"></i> Documentos para consulta (PDF)</div>
+            <div>
+                <a href="https://drive.google.com/file/d/1tKAYRtM8WSXB4ytXBd7kQAbae82j8cHI/view?usp=sharing" target="_blank" class="btn-ext"><i class="fab fa-google-drive"></i> Parte 1 – Implementação</a>
+                <a href="https://drive.google.com/file/d/1v7bWx8voK5yJbidwUVZZXa7EsCmqTTmg/view?usp=sharing" target="_blank" class="btn-ext"><i class="fab fa-google-drive"></i> Parte 2 – AEE SRM/Itinerante</a>
+                <a href="https://drive.google.com/file/d/1ClrbfWBdUpWdsVFHRXxZuok4I0RoRNpc/view?usp=sharing" target="_blank" class="btn-ext"><i class="fab fa-google-drive"></i> Parte 3 – AEE Expandido</a>
+                <a href="https://drive.google.com/file/d/11wNVVMHrTLNqH2L4tA31r6csweLKGMXN/view?usp=sharing" target="_blank" class="btn-ext"><i class="fab fa-google-drive"></i> Parte 4 – Papéis e Responsab.</a>
+                <a href="https://drive.google.com/file/d/1onS5MS5TGKYXARyk0xuoCy6p7Ju-0GSv/view?usp=sharing" target="_blank" class="btn-ext"><i class="fab fa-google-drive"></i> Parte 5 – Comissões e TA</a>
+            </div>
+            <div class="info-box" style="margin-top: 1.5rem;">
+                <i class="fas fa-graduation-cap"></i> <strong>Orientação:</strong> Utilize os vídeos (necessário login no repositório da SEDUC-SP) e os PDFs para aprofundar os conteúdos. As atividades podem ser aplicadas em ATPC, grupos de estudo ou formação individual.
+            </div>
+        </div>
+    </div>
+
+    <div class="link-footer">
+        <a href="index.html" target="_blank" class="link-btn" rel="noopener"><i class="fas fa-file-alt"></i> VOLTAR</a>
+    </div>
+
+    <footer>
+        URE-CAIEIRAS 2025 - Formação continuada · Resolução SEDUC 129/2025 · Educação Especial na perspectiva inclusiva
+    </footer>
+</div>
+
+<script>
+    const tabs = document.querySelectorAll('.tab-btn');
+    const contents = document.querySelectorAll('.tab-content');
+    function activateTab(tabId) {
+        contents.forEach(c => c.classList.remove('active'));
+        tabs.forEach(b => b.classList.remove('active'));
+        const activeContent = document.getElementById(tabId);
+        if(activeContent) activeContent.classList.add('active');
+        const activeBtn = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
+        if(activeBtn) activeBtn.classList.add('active');
+    }
+    tabs.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const tabId = btn.getAttribute('data-tab');
+            activateTab(tabId);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    });
+    if(window.location.hash) {
+        const hash = window.location.hash.substring(1);
+        if(['parte1','parte2','parte3','parte4','parte5','videos'].includes(hash)) activateTab(hash);
+    }
+</script>
+</body>
+</html>
