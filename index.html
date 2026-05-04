@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Formação Inclusiva | Resolução SEDUC 129/2025 - Educação Especial SP</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(145deg, #0a2f6c 0%, #041a3a 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #1e293b;
+            line-height: 1.5;
+        }
+
+        /* container principal - mesmo estilo do simulador */
+        .main-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: #0f1a24;
+            border-radius: 48px;
+            padding: 20px;
+            box-shadow: 0 30px 35px rgba(0,0,0,0.5), inset 0 1px 4px rgba(255,255,200,0.1);
+            border: 1px solid #d32f2f;
+        }
+
+        /* HEADER unificado com logo e badge */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 47, 108, 0.85);
+            backdrop-filter: blur(4px);
+            padding: 12px 24px;
+            border-radius: 60px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-area img {
+            max-height: 50px;
+            width: auto;
+            background: white;
+            border-radius: 12px;
+            padding: 4px;
+        }
+
+        .logo-area span {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #ffec9e;
+        }
+
+        .title-badge {
+            background: #d32f2f;
+            color: white;
+            padding: 6px 18px;
+            border-radius: 3rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        /* TABS NAV - estilo integrado */
+        .tabs-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 0 0 1.8rem 0;
+            background: rgba(255,255,255,0.05);
+            padding: 0.8rem 1rem;
+            border-radius: 60px;
+            backdrop-filter: blur(2px);
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            padding: 0.7rem 1.4rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: #e2e8f0;
+            border-radius: 40px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .tab-btn i {
+            margin-right: 8px;
+        }
+
+        .tab-btn:hover {
+            background: rgba(211, 47, 47, 0.3);
+            color: white;
+        }
+
+        .tab-btn.active {
+            background: #d32f2f;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        /* CONTENT */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+
+        /* CARDS estilo igual ao simulador */
+        .section-card {
+            background: white;
+            border-radius: 32px;
+            padding: 1.8rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            border: 1px solid #e0e4e9;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0a2f6c;
+            border-left: 5px solid #d32f2f;
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .subsection-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 1.8rem 0 1rem 0;
+            color: #0a2f6c;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .subsection-title i {
+            color: #d32f2f;
+        }
+
+        .legal-badge {
+            background: #eef3fb;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #0a2f6c;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .info-box {
+            background: #eef3fb;
+            border-left: 5px solid #d32f2f;
+            padding: 1rem 1.2rem;
+            border-radius: 20px;
+            margin: 1rem 0;
+        }
+
+        .data-highlight {
+            background: #e6f7ec;
+            border-radius: 20px;
+            padding: 1rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        ul, ol {
+            padding-left: 1.6rem;
+            margin: 0.8rem 0;
+        }
+
+        li {
+            margin: 0.5rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background: #0a2f6c;
+            color: white;
+            font-weight: 600;
+        }
+
+        .video-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .video-item {
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 1rem;
+            transition: 0.2s;
+            border: 1px solid #e2e8f0;
+        }
+
+        .video-item a {
+            font-weight: 600;
+            color: #0a2f6c;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .video-item a i {
+            font-size: 1.8rem;
+            color: #d32f2f;
+        }
+
+        .video-item:hover {
+            background: #eef3fb;
+            transform: translateX(4px);
+        }
+
+        .btn-ext {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #f1f5f9;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #0a2f6c;
+            text-decoration: none;
+            margin-top: 0.8rem;
+            transition: 0.2s;
+        }
+
+        .btn-ext i {
+            font-size: 0.9rem;
+        }
+
+        .btn-ext:hover {
+            background: #d32f2f;
+            color: white;
+        }
+
+        hr {
+            margin: 1.5rem 0;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.8rem;
+            color: #b4c8e0;
+        }
+
+        .links-footer {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.1);
+            padding: 8px 16px;
+            border-radius: 40px;
+            color: white;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .link-btn:hover {
+            background: #d32f2f;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .main-container { padding: 12px; }
+            .tabs-nav { overflow-x: auto; flex-wrap: nowrap; justify-content: flex-start; border-radius: 30px; }
+            .tab-btn { padding: 0.5rem 1.2rem; font-size: 0.8rem; white-space: nowrap; }
+            .tab-content { padding: 0; }
+            .section-title { font-size: 1.5rem; }
+            .subsection-title { font-size: 1.2rem; }
+        }
+
+        /* impressão amigável */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .main-container {
+                background: white;
+                box-shadow: none;
+                border: none;
+                padding: 0.2cm;
+            }
+            .header, .tabs-nav, .links-footer, .footer-note, .btn-ext, .video-item a {
+                display: none;
+            }
+            .tab-content {
+                display: block !important;
+            }
+            .section-card {
+                box-shadow: none;
+                border: 1px solid #ccc;
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="main-container">
+    <!-- HEADER unificado (mesmo visual do simulador) -->
+    <div class="header">
+        <div class="logo-area">
+            <img src="https://i.ibb.co/0p01LzxB/logo3de.jpg" alt="Logo SEDUC">
+            <span>Educação Inclusiva SP</span>
+        </div>
+        <div class="title-badge"><i class="fas fa-chalkboard-user"></i> Resolução SEDUC 129/2025</div>
+    </div>
+
+    <!-- Navegação por abas -->
+    <div class="tabs-nav">
+        <button class="tab-btn active" data-tab="parte1"><i class="fas fa-book-open"></i> Implementação</button>
+        <button class="tab-btn" data-tab="parte2"><i class="fas fa-hands-helping"></i> AEE (SRM/Itinerante)</button>
+        <button class="tab-btn" data-tab="parte3"><i class="fas fa-people-arrows"></i> AEE Expandido</button>
+        <button class="tab-btn" data-tab="parte4"><i class="fas fa-users"></i> Papéis e Responsab.</button>
+        <button class="tab-btn" data-tab="parte5"><i class="fas fa-microchip"></i> Comissões e TA</button>
+        <button class="tab-btn" data-tab="videos"><i class="fas fa-video"></i> Vídeos e Lives</button>
+    </div>
+
+    <!-- ======================= PARTE 1 ======================= -->
+    <div id="parte1" class="tab-content active">
+        <div class="section-card">
+            <span class="legal-badge"><i class="fas fa-gavel"></i> Base legal: CF/88, LDB, LBI, Decreto 67.635/2023</span>
+            <div class="section-title">📌 Implementação da Política de Educação Especial – Resolução SEDUC 129/2025</div>
+            <p>A Resolução SEDUC nº 129/2025 consolida o marco normativo da Educação Especial paulista, superando o paradigma médico-assistencial e adotando o <strong>modelo social de inclusão</strong>. Reafirma o compromisso com a eliminação de barreiras e a promoção da autonomia dos estudantes elegíveis (deficiência, TEA, Altas Habilidades/Superdotação e estudantes em investigação).</p>
+            
+            <div class="subsection-title"><i class="fas fa-chart-line"></i> Evolução e dados estruturais</div>
+            <div class="grid-2">
+                <div class="info-box">📈 De 2021 a 2025: estudantes elegíveis cresceram de <strong>66.802 para quase 95 mil</strong>. Professores especializados: <strong>de 3.196 para 15.778</strong> (expansão de quase 5x).</div>
+                <div class="info-box">🔄 AEE em Sala de Recursos/Itinerante: 3.133 → 9.271 docentes. Projeto Ensino Colaborativo: 63 → 6.507 professores (2025).</div>
+            </div>
+            
+            <div class="subsection-title"><i class="fas fa-balance-scale"></i> Fundamentação Legal</div>
+            <ul>
+                <li>Constituição Federal (art. 208, III) – atendimento educacional especializado preferencialmente na rede regular.</li>
+                <li>Lei nº 9.394/1996 (LDB) – Educação Especial como modalidade transversal, AEE complementar/suplementar.</li>
+                <li>Lei Brasileira de Inclusão (13.146/2015) – modelo biopsicossocial, adaptações razoáveis, tecnologia assistiva.</li>
+                <li>Lei Berenice Piana (12.764/2012) – reconhecimento do TEA como deficiência.</li>
+                <li>Decreto Estadual 67.635/2023 e Resolução SEDUC 129/2025 (revoga a 21/2023).</li>
+            </ul>
+            
+            <div class="subsection-title"><i class="fas fa-star-of-life"></i> Princípios Orientadores</div>
+            <div class="grid-2">
+                <div><i class="fas fa-hand-holding-heart"></i> <strong>Centralidade do estudante</strong> – protagonista do processo.</div>
+                <div><i class="fas fa-ban"></i> <strong>Eliminação de barreiras</strong> (arquitetônicas, atitudinais, pedagógicas, comunicacionais, tecnológicas).</div>
+                <div><i class="fas fa-handshake"></i> <strong>Corresponsabilidade institucional</strong> – toda a rede (escola, URE, SEDUC).</div>
+                <div><i class="fas fa-brain"></i> <strong>Abordagem biopsicossocial</strong> – deficiência como interação pessoa-ambiente.</div>
+            </div>
+            
+            <div class="subsection-title"><i class="fas fa-user-check"></i> Estudantes Elegíveis</div>
+            <ul>
+                <li><strong>Deficiência</strong> (física, auditiva/surdez, visual, intelectual, múltipla, surdocegueira).</li>
+                <li><strong>Transtorno do Espectro Autista (TEA)</strong> – comunicação social, comportamentos restritivos.</li>
+                <li><strong>Altas Habilidades/Superdotação (AH/SD)</strong> – enriquecimento curricular.</li>
+                <li><strong>Estudantes em investigação diagnóstica</strong> – direito ao AEE durante processo, via estudo de caso e relatório circunstanciado.</li>
+            </ul>
+            <div class="info-box"><i class="fas fa-stethoscope"></i> Laudo médico não é condição para matrícula no AEE. A escola realiza o Estudo de Caso e identifica necessidades pedagógicas.</div>
+        </div>
+    </div>
+
+    <!-- ======================= PARTE 2 ======================= -->
+    <div id="parte2" class="tab-content">
+        <div class="section-card">
+            <div class="section-title">🧩 Atendimento Educacional Especializado – AEE (Sala de Recursos Multifuncionais / Itinerante)</div>
+            <p>O AEE é política pedagógica <strong>integrada ao cotidiano escolar</strong>, não um serviço paralelo. Atua de forma complementar (deficiência/TEA) ou suplementar (AH/SD), garantindo acesso ao currículo, autonomia e eliminação de barreiras.</p>
+            
+            <div class="subsection-title"><i class="fas fa-chalkboard"></i> Organização do Atendimento</div>
+            <ul>
+                <li>Salas de Recursos Multifuncionais ou Modalidade Itinerante em Espaço Multiuso.</li>
+                <li>Turmas com até <strong>3 estudantes</strong>, carga horária definida no PAEE (até 6 aulas semanais por turma).</li>
+                <li>Contraturno (escolas parciais) ou durante jornada / turno extra no PEI.</li>
+                <li>Atendimento por área específica. Em hipótese diagnóstica, professor especializado sem especificidade.</li>
+            </ul>
+            
+            <div class="subsection-title"><i class="fas fa-file-alt"></i> Documentos Pedagógicos Obrigatórios</div>
+            <table>
+                <thead>
+                    <tr><th>Documento</th><th>Responsável</th><th>Periodicidade</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Estudo de Caso</strong> (Anexo II)</td><td>Professor Especializado + equipe</td><td>Até 30 dias após matrícula</td></tr>
+                    <tr><td><strong>PAEE</strong> (Anexo III)</td><td>Professor Especializado</td><td>Bimestral</td></tr>
+                    <tr><td><strong>PEI</strong> (Anexo IV)</td><td>Professor Regente com apoio especializado</td><td>Bimestral</td></tr>
+                    <tr><td><strong>Relatório de Acolhimento e Retorno às Famílias</strong></td><td>Professor AEE + coordenação</td><td>Bimestral</td></tr>
+                </tbody>
+            </table>
+            <div class="info-box"><i class="fas fa-database"></i> Todos os documentos devem ser digitalizados e anexados na Secretaria Escolar Digital (SED), além de portfólio físico.</div>
+        </div>
+    </div>
+
+    <!-- ======================= PARTE 3 ======================= -->
+    <div id="parte3" class="tab-content">
+        <div class="section-card">
+            <div class="section-title">🤝 Projeto Ensino Colaborativo – AEE Expandido</div>
+            <p>O AEE Expandido (Ensino Colaborativo) modalidade onde o Professor Especializado atua dentro da sala de aula comum, promovendo acessibilidade curricular. Conforme Resolução SEDUC 129/2025 e 165/2025, o professor especializado destina <strong>4 aulas semanais para o Ensino Colaborativo</strong> (até a nona turma da UE).</p>
+            
+            <div class="subsection-title"><i class="fas fa-handshake"></i> Objetivos e práticas colaborativas</div>
+            <ul>
+                <li>Planejamento conjunto entre professor regente e especializado para adaptar metodologias.</li>
+                <li>Observação em sala de aula e corresponsabilização pela aprendizagem.</li>
+                <li>Orientação sobre tecnologias assistivas e adequações curriculares.</li>
+            </ul>
+            <div class="info-box"><strong>💡 Importante:</strong> AEE Expandido não substitui o atendimento na Sala de Recursos; são eixos complementares.</div>
+        </div>
+    </div>
+
+    <!-- ======================= PARTE 4 ======================= -->
+    <div id="parte4" class="tab-content">
+        <div class="section-card">
+            <div class="section-title">👥 Papéis e Responsabilidades – Resolução SEDUC 129/2025 (art.23)</div>
+            <p>A implementação da política exige atuação articulada de todos os níveis: SEDUC, Regionais, equipes gestoras.</p>
+            <ul>
+                <li><strong>Dirigente Regional de Ensino:</strong> define Equipe de Educação Especial (supervisor + PEC).</li>
+                <li><strong>Supervisores de Ensino:</strong> assessoramento, visitas técnicas.</li>
+                <li><strong>Equipe de Educação Especial:</strong> orientação técnica, formação.</li>
+                <li><strong>Diretor de Escola:</strong> gestão da política na UE.</li>
+                <li><strong>Coordenador Pedagógico:</strong> articulação do AEE Expandido.</li>
+                <li><strong>Professor Especializado:</strong> elabora Estudo de Caso, PAEE, apoia PEI, indica tecnologia assistiva.</li>
+                <li><strong>Profissional de Apoio Escolar (PAE):</strong> apoio nas atividades de vida diária, não exerce docência.</li>
+                <li><strong>Professor Regente:</strong> principal responsável pela acessibilidade curricular e elaboração do PEI.</li>
+            </ul>
+            <div class="info-box"><i class="fas fa-file-signature"></i> Plano Educacional Individualizado (PEI) – bimestral, elaborado pelo professor regente com apoio do especializado.</div>
+        </div>
+    </div>
+
+    <!-- ======================= PARTE 5 ======================= -->
+    <div id="parte5" class="tab-content">
+        <div class="section-card">
+            <div class="section-title">⚙️ Comissão de Recursos Pedagógicos, Acessibilidade e Tecnologia Assistiva</div>
+            <p>Instância estratégica nas UREs (art.24 da Resolução 129/2025). Composta por no mínimo 3 servidores, eleição bienal.</p>
+            <div class="subsection-title"><i class="fas fa-search"></i> Competências principais</div>
+            <ul>
+                <li>Diagnóstico das unidades para demandas de recursos de acessibilidade e TA.</li>
+                <li>Apoio técnico-pedagógico na produção/adaptação de materiais.</li>
+                <li>Orientação sobre programas: PNLD Acessível, PDDE Paulista.</li>
+                <li>Fomento ao Desenho Universal para a Aprendizagem (DUA).</li>
+            </ul>
+            <div class="subsection-title"><i class="fas fa-laptop-code"></i> Tecnologia Assistiva (TA)</div>
+            <p>Conforme LBI, TA indicada no Estudo de Caso e PAEE. Aquisição via PDDE Paulista. Exemplos: lupas, comunicação alternativa, mobiliário, softwares de leitura de tela.</p>
+        </div>
+    </div>
+
+    <!-- ======================= VÍDEOS ======================= -->
+    <div id="videos" class="tab-content">
+        <div class="section-card">
+            <div class="section-title"><i class="fas fa-play-circle"></i> Formação multimídia – Lives e orientações</div>
+            <p>Vídeos da formação continuada sobre a Resolução SEDUC 129/2025 (acesso restrito à rede estadual).</p>
+            <div class="video-grid">
+                <div class="video-item"><a href="https://repositorio.educacao.sp.gov.br/videoPlay?id=152261" target="_blank"><i class="fas fa-video"></i> Vídeo 1 - Abertura + Educação Especial: Diálogo sobre a Resolução SEDUC nº 129/2025</a></div>
+                <div class="video-item"><a href="https://repositorio.educacao.sp.gov.br/videoPlay?id=152262" target="_blank"><i class="fas fa-chalkboard"></i> Vídeo 2 - Atendimento Educacional Especializado – AEE em Sala de Recursos</a></div>
+                <div class="video-item"><a href="https://repositorio.educacao.sp.gov.br/videoPlay?id=152263" target="_blank"><i class="fas fa-people-arrows"></i> Vídeo 3 - Projeto Ensino Colaborativo – AEE Expandido</a></div>
+                <div class="video-item"><a href="https://repositorio.educacao.sp.gov.br/videoPlay?id=152264" target="_blank"><i class="fas fa-file-alt"></i> Vídeo 4 - Estudo de Caso: elaboração e importância</a></div>
+                <div class="video-item"><a href="https://repositorio.educacao.sp.gov.br/videoPlay?id=152265" target="_blank"><i class="fas fa-clipboard-list"></i> Vídeo 5 - Plano de Atendimento Educacional Especializado – PAEE</a></div>
+                <div class="video-item"><a href="https://repositorio.educacao.sp.gov.br/videoPlay?id=152266" target="_blank"><i class="fas fa-file-signature"></i> Vídeo 6 - Plano Educacional Individualizado – PEI</a></div>
+                <div class="video-item"><a href="https://repositorio.educacao.sp.gov.br/videoPlay?id=152267" target="_blank"><i class="fas fa-handshake"></i> Vídeo 7 - Relatório de Acolhimento, orientação e retorno bimestral</a></div>
+            </div>
+            <hr>
+            <div class="subsection-title"><i class="fas fa-download"></i> Documentos oficiais para consulta (PDFs)</div>
+            <p>
+                <a href="https://drive.google.com/file/d/1tKAYRtM8WSXB4ytXBd7kQAbae82j8cHI/view?usp=sharing" target="_blank" class="btn-ext"><i class="fab fa-google-drive"></i> Parte 1 – Implementação</a>
+                <a href="https://drive.google.com/file/d/1v7bWx8voK5yJbidwUVZZXa7EsCmqTTmg/view?usp=sharing" target="_blank" class="btn-ext"><i class="fab fa-google-drive"></i> Parte 2 – AEE</a>
+                <a href="https://drive.google.com/file/d/1ClrbfWBdUpWdsVFHRXxZuok4I0RoRNpc/view?usp=sharing" target="_blank" class="btn-ext"><i class="fab fa-google-drive"></i> Parte 3 – AEE Expandido</a>
+                <a href="https://drive.google.com/file/d/11wNVVMHrTLNqH2L4tA31r6csweLKGMXN/view?usp=sharing" target="_blank" class="btn-ext"><i class="fab fa-google-drive"></i> Parte 4 – Papéis</a>
+                <a href="https://drive.google.com/file/d/1onS5MS5TGKYXARyk0xuoCy6p7Ju-0GSv/view?usp=sharing" target="_blank" class="btn-ext"><i class="fab fa-google-drive"></i> Parte 5 – Comissões e TA</a>
+            </p>
+            <div class="info-box"><i class="fas fa-graduation-cap"></i> Recomenda-se a leitura integrada da Resolução SEDUC 129/2025 e dos anexos, aliada aos vídeos para aprofundamento prático.</div>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        <i class="fas fa-university"></i> UNIDADE REGIONAL DE ENSINO – Secretaria da Educação | Diretoria de Educação Especial e Inclusão<br>
+        Base normativa: Decreto 67.635/2023 | Resolução SEDUC 129/2025 | Lei Brasileira de Inclusão (13.146/2015)
+        <div class="links-footer">
+            <a href="index1.html" target="_blank" class="link-btn"><i class="fas fa-external-link-alt"></i> Treinamento AEE</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    const tabs = document.querySelectorAll('.tab-btn');
+    const contents = document.querySelectorAll('.tab-content');
+
+    function activateTab(tabId) {
+        contents.forEach(content => content.classList.remove('active'));
+        tabs.forEach(btn => btn.classList.remove('active'));
+        const activeContent = document.getElementById(tabId);
+        if (activeContent) activeContent.classList.add('active');
+        const activeBtn = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
+        if (activeBtn) activeBtn.classList.add('active');
+    }
+
+    tabs.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const tabId = btn.getAttribute('data-tab');
+            activateTab(tabId);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    });
+
+    if (window.location.hash) {
+        const hash = window.location.hash.substring(1);
+        if (['parte1','parte2','parte3','parte4','parte5','videos'].includes(hash)) {
+            activateTab(hash);
+        }
+    }
+</script>
+</body>
+</html>
