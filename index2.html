@@ -200,12 +200,29 @@
             font-weight: bold;
             cursor: pointer;
         }
-        .link-footer {
+        .links-footer {
             display: flex;
             justify-content: center;
             gap: 1.5rem;
             flex-wrap: wrap;
-            margin-top: 1.5rem;
+            margin: 1.5rem 0 0.5rem;
+        }
+        .link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.1);
+            padding: 8px 16px;
+            border-radius: 40px;
+            color: white;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        .link-btn:hover {
+            background: var(--vermelho);
+            transform: translateY(-2px);
         }
         footer {
             text-align: center;
@@ -296,11 +313,12 @@
             <div id="cert5" class="cert-area"></div>
         </div>
     </div>
-            <div class="link-footer">
+    <div class="links-footer">
         <a href="index.html" target="_blank" class="link-btn" rel="noopener"><i class="fas fa-file-alt"></i>VOLTAR</a>
-             </div>
+    </div>
     <footer>
-        <i class="fas fa-university"></i> Secretaria da Educação SP – Diretoria de Educação Especial e Inclusão | Resolução SEDUC 129/2025</footer>
+        <i class="fas fa-university"></i> Secretaria da Educação SP – Diretoria de Educação Especial e Inclusão | Resolução SEDUC 129/2025
+    </footer>
 </div>
 
 <script>
